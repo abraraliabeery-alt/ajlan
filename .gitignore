@@ -1,0 +1,15 @@
+/.phpunit.cache
+/.idea
+/.vscode
+/.env
+/vendor
+/bootstrap/cache/*.php
+/public/storage
+/storage/*.key
+/storage/framework/cache/data/*
+/storage/framework/sessions/*
+/storage/framework/views/*
+/storage/logs/*.log
+/database/database.sqlite
+.DS_Store
+Thumbs.db

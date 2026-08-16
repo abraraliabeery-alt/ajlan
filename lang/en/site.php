@@ -1,0 +1,30 @@
+<?php
+
+return [
+    'brand' => 'Ajlan & Bros Real Estate',
+    'home' => 'Home', 'warehouses' => 'Warehouses', 'media' => 'Photos & video', 'about' => 'About', 'contact' => 'Contact',
+    'request_warehouse' => 'Request a warehouse', 'call_now' => 'Call now', 'email_us' => 'Email us',
+    'hero_kicker' => 'Industrial and logistics space in south Riyadh', 'hero_title' => 'Warehouses for rent that move business forward', 'hero_body' => 'Industrial warehouses with consistent construction standards, areas and heights for medium and large operations.',
+    'browse' => 'Browse warehouses', 'request_visit' => 'Request a viewing',
+    'warehouses_count' => 'units & warehouses', 'plots_count' => 'industrial plots', 'land_area_total' => 'm² land area', 'built_area_total' => 'm² built area',
+    'featured_kicker' => 'Selected plots', 'featured_title' => 'Start with the space you need', 'featured_body' => 'Compare unit areas and heights, then open each plot page for complete details.',
+    'all_plots' => 'All industrial plots', 'units' => 'units', 'unit' => 'unit', 'land_area' => 'Land area', 'unit_area' => 'Unit area', 'height' => 'Height', 'side_height' => 'Side height', 'middle_height' => 'Middle height', 'sqm' => 'm²', 'meter' => 'm', 'details' => 'View details',
+    'specs_kicker' => 'Operating standards', 'specs_title' => 'Ready for business', 'specs_body' => 'Unified construction, safety and operating standards designed for reliable industrial use.',
+    'features' => [
+        ['Certified safety', 'Civil Defense-approved fire-fighting system with medium-risk classification.'],
+        ['Industrial flooring', '20 cm steel-fiber reinforced concrete supporting concentrated loads up to 12 tons.'],
+        ['Fire-resistant walls', 'AAC panels with thermal insulation and more than four hours of fire resistance.'],
+        ['Insulated roofing', 'Insulated metal panels with a 4 cm foam layer for heat and moisture protection.'],
+        ['Integrated facilities', '6 × 6 m office with pantry, private washroom and independent underground water tank.'],
+        ['Efficient operations', 'Main and loading doors, 150-amp electricity meter and dedicated lighting.'],
+    ],
+    'media_kicker' => 'Real documentation', 'media_title' => 'See every site as it is', 'media_body' => 'Complete aerial photos and videos of warehouses 51–54 and showrooms 13–16 in Riyadh.', 'view_media' => 'View photos and video',
+    'company_kicker' => 'Ajlan & Bros', 'company_title' => 'Group strength. Real estate agility.', 'company_body' => 'Ajlan & Bros Real Estate specializes in residential, industrial, commercial and logistics land, backed by a broad portfolio and investments across more than 25 countries.',
+    'catalog_title' => 'Warehouses for rent in Riyadh', 'catalog_body' => 'Compare 25 industrial plots and 269 warehouses with unit areas starting around 1,060 m².', 'search' => 'Search plot code', 'results' => 'results', 'no_results' => 'No matching results.',
+    'overview' => 'Overview', 'specifications' => 'Specifications', 'faq' => 'Frequently asked questions', 'availability' => 'Contact us for availability', 'media_available' => 'Professional aerial coverage is available for this location.',
+    'contact_title' => 'Tell us what your operation needs', 'contact_body' => 'Share your preferred area and use, and our team will present the most suitable options.',
+    'name' => 'Name', 'phone' => 'Mobile number', 'email' => 'Email', 'required_area' => 'Required area', 'activity' => 'Business activity', 'message' => 'Additional notes', 'select_property' => 'Preferred plot', 'any_property' => 'Any suitable plot', 'send' => 'Send request', 'form_success' => 'Your request has been received. Our team will contact you shortly.',
+    'warehouse_collection' => 'Warehouses 51–54', 'showroom_collection' => 'Showrooms 13–16', 'photos' => 'Photos', 'video' => 'Video',
+    'footer_text' => 'Industrial and logistics spaces designed to support business growth in Riyadh.', 'rights' => 'All rights reserved.',
+    'seo_default_title' => 'Warehouses for Rent in Riyadh | Ajlan & Bros Real Estate', 'seo_default_description' => 'Warehouses for rent in south Riyadh across 25 industrial plots and 269 units with varied areas and heights.',
+];

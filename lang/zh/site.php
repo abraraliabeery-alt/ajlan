@@ -1,0 +1,30 @@
+<?php
+
+return [
+    'brand' => 'Ajlan & Bros 房地产',
+    'home' => '首页', 'warehouses' => '仓库', 'media' => '照片与视频', 'about' => '关于我们', 'contact' => '联系我们',
+    'request_warehouse' => '申请仓库', 'call_now' => '立即致电', 'email_us' => '发送邮件',
+    'hero_kicker' => '利雅得南部工业及物流空间', 'hero_title' => '利雅得仓库出租，助力业务向前发展', 'hero_body' => '采用统一建筑标准的工业仓库，提供适合中大型企业的面积和高度选择。',
+    'browse' => '浏览仓库', 'request_visit' => '预约参观',
+    'warehouses_count' => '个仓库单元', 'plots_count' => '块工业用地', 'land_area_total' => '平方米土地面积', 'built_area_total' => '平方米建筑面积',
+    'featured_kicker' => '精选地块', 'featured_title' => '从所需面积开始', 'featured_body' => '比较单元面积与高度，并查看每个地块的完整详情。',
+    'all_plots' => '全部工业地块', 'units' => '个单元', 'unit' => '个单元', 'land_area' => '土地面积', 'unit_area' => '单元面积', 'height' => '高度', 'side_height' => '边高', 'middle_height' => '中间高度', 'sqm' => '平方米', 'meter' => '米', 'details' => '查看详情',
+    'specs_kicker' => '运营标准', 'specs_title' => '为企业运营而设计', 'specs_body' => '统一的建筑、安全和运营标准，为工业及物流业务提供可靠空间。',
+    'features' => [
+        ['认证安全系统', '经民防部门批准的消防系统，中等风险等级。'],
+        ['工业地坪', '20厘米钢纤维混凝土地坪，可承受最高12吨集中荷载。'],
+        ['耐火墙体', '加气混凝土墙板，具备隔热性能及4小时以上耐火能力。'],
+        ['保温屋面', '4厘米泡沫保温金属板，隔热防潮。'],
+        ['配套设施', '6×6米办公室，含茶水间、独立卫生间及地下水箱。'],
+        ['高效装卸', '主入口及装卸门，150安培电表和专用照明。'],
+    ],
+    'media_kicker' => '真实记录', 'media_title' => '实景查看每个项目', 'media_body' => '完整展示利雅得51–54号仓库及13–16号展厅的航拍照片和视频。', 'view_media' => '查看照片与视频',
+    'company_kicker' => 'Ajlan & Bros', 'company_title' => '集团实力，房地产灵活性', 'company_body' => 'Ajlan & Bros房地产专注于住宅、工业、商业及物流用地，投资覆盖25多个国家。',
+    'catalog_title' => '利雅得仓库出租', 'catalog_body' => '比较25块工业用地和269个仓库，单元面积约从1,060平方米起。', 'search' => '搜索地块编号', 'results' => '个结果', 'no_results' => '没有匹配结果。',
+    'overview' => '概览', 'specifications' => '技术规格', 'faq' => '常见问题', 'availability' => '联系我们了解可用情况', 'media_available' => '该地块提供专业航拍资料。',
+    'contact_title' => '告诉我们您的需求', 'contact_body' => '提交面积及用途需求，我们的团队将为您提供合适方案。',
+    'name' => '姓名', 'phone' => '手机号码', 'email' => '电子邮箱', 'required_area' => '所需面积', 'activity' => '业务类型', 'message' => '补充说明', 'select_property' => '意向地块', 'any_property' => '任何合适地块', 'send' => '提交申请', 'form_success' => '申请已收到，我们的团队将尽快与您联系。',
+    'warehouse_collection' => '51–54号仓库', 'showroom_collection' => '13–16号展厅', 'photos' => '照片', 'video' => '视频',
+    'footer_text' => '为利雅得企业发展提供工业和物流空间。', 'rights' => '版权所有。',
+    'seo_default_title' => '利雅得仓库出租 | Ajlan & Bros房地产', 'seo_default_description' => '利雅得南部25块工业用地、269个仓库单元出租，提供多种面积和高度选择。',
+];
