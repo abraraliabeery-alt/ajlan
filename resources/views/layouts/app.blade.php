@@ -43,7 +43,7 @@
     <meta name="twitter:description" content="{{ $pageDescription }}">
     <meta name="twitter:image" content="{{ asset('media/warehouses/warehouses-poster.jpg') }}">
     <link rel="icon" href="{{ asset('favicon.png') }}">
-    <link rel="stylesheet" href="{{ asset('css/site.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/site.css') }}?v={{ filemtime(public_path('css/site.css')) }}">
     <script>document.documentElement.dataset.theme=localStorage.getItem('ajlan-theme')||'dark';</script>
     <script type="application/ld+json">{!! json_encode([
         '@context' => 'https://schema.org',
