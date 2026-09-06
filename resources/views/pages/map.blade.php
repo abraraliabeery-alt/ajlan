@@ -23,7 +23,6 @@
                     <li><button type="button" data-status="reserved"><i class="sw" style="background:#d9a441"></i>{{ __('site.st_reserved') }}</button></li>
                     <li><button type="button" data-status="temp_reserved"><i class="sw" style="background:#e0782e"></i>{{ __('site.st_temp_reserved') }}</button></li>
                     <li><button type="button" data-status="leased"><i class="sw" style="background:#b0554a"></i>{{ __('site.st_leased') }}</button></li>
-                    <li><button type="button" data-status="sold"><i class="sw" style="background:#8e6fc9"></i>{{ __('site.st_sold') }}</button></li>
                     <li class="legend-group">{{ __('site.legend_blocks_state') }}</li>
                     <li><span class="legend-info"><i class="sw" style="background:#7ed957"></i>{{ __('site.map_available') }}</span></li>
                     <li><span class="legend-info"><i class="sw" style="background:#ffd166"></i>{{ __('site.map_partial') }}</span></li>
