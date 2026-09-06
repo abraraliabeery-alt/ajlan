@@ -3,7 +3,7 @@
 return [
     'brand' => 'Ajlan & Bros 房地产',
     'home' => '首页', 'warehouses' => '仓库', 'media' => '照片与视频', 'about' => '关于我们', 'contact' => '联系我们',
-    'request_warehouse' => '申请仓库', 'call_now' => '立即致电', 'email_us' => '发送邮件', 'whatsapp' => 'WhatsApp', 'unified_number' => '统一号码',
+    'request_warehouse' => '申请仓库', 'call_now' => '立即致电', 'email_us' => '发送邮件', 'whatsapp' => 'WhatsApp', 'unified_number' => '统一号码', 'view_on_gmaps' => '在谷歌地图查看',
     'hero_kicker' => '利雅得南部工业及物流空间', 'hero_title' => '利雅得仓库出租，助力业务向前发展', 'hero_body' => '采用统一建筑标准的工业仓库，提供适合中大型企业的面积和高度选择。',
     'browse' => '浏览仓库', 'request_visit' => '预约参观',
     'warehouses_count' => '个仓库单元', 'plots_count' => '块工业用地', 'land_area_total' => '平方米土地面积', 'built_area_total' => '平方米建筑面积',

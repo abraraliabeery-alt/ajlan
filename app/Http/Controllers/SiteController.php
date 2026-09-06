@@ -44,11 +44,16 @@ class SiteController extends Controller
 
         $planImage = $property->media->firstWhere('collection', 'plan');
 
+        $locations = json_decode(file_get_contents(public_path('media/plot_locations.json')), true) ?? [];
+        $gmapsUrl = isset($locations[$property->code])
+            ? 'https://www.google.com/maps?q='.$locations[$property->code][0].','.$locations[$property->code][1]
+            : null;
+
         $unitRows = $property->units
             ->sortBy('code', SORT_NATURAL)
             ->groupBy(fn ($u) => explode('/', (string) $u->code)[2] ?? '');
 
-        return view('properties.show', compact('locale', 'property', 'translation', 'faq', 'gallery', 'planImage', 'unitRows'));
+        return view('properties.show', compact('locale', 'property', 'translation', 'faq', 'gallery', 'planImage', 'unitRows', 'gmapsUrl'));
     }
 
     public function media(string $locale)

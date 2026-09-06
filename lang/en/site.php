@@ -3,7 +3,7 @@
 return [
     'brand' => 'Ajlan & Bros Real Estate',
     'home' => 'Home', 'warehouses' => 'Warehouses', 'media' => 'Photos & video', 'about' => 'About', 'contact' => 'Contact',
-    'request_warehouse' => 'Request a warehouse', 'call_now' => 'Call now', 'email_us' => 'Email us', 'whatsapp' => 'WhatsApp', 'unified_number' => 'Unified number',
+    'request_warehouse' => 'Request a warehouse', 'call_now' => 'Call now', 'email_us' => 'Email us', 'whatsapp' => 'WhatsApp', 'unified_number' => 'Unified number', 'view_on_gmaps' => 'View on Google Maps',
     'hero_kicker' => 'Industrial and logistics space in south Riyadh', 'hero_title' => 'Warehouses for rent that move business forward', 'hero_body' => 'Industrial warehouses with consistent construction standards, areas and heights for medium and large operations.',
     'browse' => 'Browse warehouses', 'request_visit' => 'Request a viewing',
     'warehouses_count' => 'units & warehouses', 'plots_count' => 'industrial plots', 'land_area_total' => 'm² land area', 'built_area_total' => 'm² built area',

@@ -63,7 +63,7 @@
 </dialog>
 @endif
 
-<section class="section property-overview"><div class="container two-column"><div><span class="kicker">{{ __('site.overview') }}</span><h2>{{ $translation->name }}</h2><p>{{ $translation->description }}</p>@if(in_array($property->code, ['T/51','T/54']))<div class="media-note">◉ {{ __('site.media_available') }}</div>@endif</div>@if($planImage)<button type="button" class="plan-sheet" data-lightbox="{{ asset($planImage->file_path) }}" data-lb-group="album"><img src="{{ asset($planImage->file_path) }}" alt="{{ $property->code }}" loading="lazy"></button>@else<div class="industrial-shape"><span dir="ltr">{{ $property->code }}</span></div>@endif</div></section>
+<section class="section property-overview"><div class="container two-column"><div><span class="kicker">{{ __('site.overview') }}</span><h2>{{ $translation->name }}</h2><p>{{ $translation->description }}</p>@if(in_array($property->code, ['T/51','T/54']))<div class="media-note">◉ {{ __('site.media_available') }}</div>@endif</div>@if($planImage)<div class="plan-wrap"><button type="button" class="plan-sheet" data-lightbox="{{ asset($planImage->file_path) }}" data-lb-group="album"><img src="{{ asset($planImage->file_path) }}" alt="{{ $property->code }}" loading="lazy"></button>@if($gmapsUrl)<a class="button button-outline gmaps-link" dir="ltr" href="{{ $gmapsUrl }}" target="_blank" rel="noopener">📍 {{ __('site.view_on_gmaps') }}</a>@endif</div>@else<div class="industrial-shape"><span dir="ltr">{{ $property->code }}</span></div>@endif</div></section>
 
 @if($unitRows->isNotEmpty())
 <section class="section units-section"><div class="container">
