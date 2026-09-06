@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class PropertyUnit extends Model
 {
-    public const STATUSES = ['available', 'reserved', 'temp_reserved', 'leased', 'sold', 'visit'];
+    public const STATUSES = ['available', 'reserved', 'temp_reserved', 'leased', 'visit'];
 
     protected $fillable = ['property_id', 'unit_number', 'status', 'area', 'code', 'parcel_nos', 'land_area', 'geometry'];
 

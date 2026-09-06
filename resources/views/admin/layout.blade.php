@@ -32,7 +32,6 @@
         .p-res{background:rgba(217,164,65,.18);color:#e8c170}
         .p-leased{background:rgba(176,85,74,.2);color:#e08b7f}
         .p-temp{background:rgba(224,120,46,.18);color:#f0a06a}
-        .p-sold{background:rgba(142,111,201,.2);color:#b79ce8}
         .p-visit{background:rgba(74,144,217,.18);color:#8ab8ea}
         .p-paid{background:rgba(46,163,127,.18);color:#5fd4ab}
         .p-pending{background:rgba(255,255,255,.08);color:#9aaba6}

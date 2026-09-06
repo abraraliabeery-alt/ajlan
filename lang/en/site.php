@@ -56,7 +56,6 @@ return [
     'st_reserved' => 'Reserved',
     'st_temp_reserved' => 'Temp. hold',
     'st_leased' => 'Leased',
-    'st_sold' => 'Sold',
     'st_visit' => 'Visit',
     'map_status' => 'Status',
     'map_parcels_title' => 'Parcels',

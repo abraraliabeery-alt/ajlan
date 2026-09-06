@@ -56,7 +56,6 @@ return [
     'st_reserved' => '已预订',
     'st_temp_reserved' => '临时保留',
     'st_leased' => '已租出',
-    'st_sold' => '已售',
     'st_visit' => '看房预约',
     'map_status' => '状态',
     'map_parcels_title' => '地块',

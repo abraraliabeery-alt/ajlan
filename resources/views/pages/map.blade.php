@@ -90,7 +90,7 @@
 
         const PARCEL_LINE = '#ff5ec8';
         const STATUS_COLORS = { available: '#7ed957', partial: '#ffd166', unavailable: '#ef6f6c' };
-        const PARCEL_COLORS = { available: '#2ea37f', reserved: '#d9a441', temp_reserved: '#e0782e', leased: '#b0554a', sold: '#8e6fc9', visit: '#4a90d9' };
+        const PARCEL_COLORS = { available: '#2ea37f', reserved: '#d9a441', temp_reserved: '#e0782e', leased: '#b0554a', visit: '#4a90d9' };
         const PARCEL_STATUS_NAMES = @json($statusNames);
         const parcelStatuses = @json($parcelStatuses);
         const parcelUnits = @json($parcelUnits);

@@ -46,7 +46,6 @@ return [
     'st_reserved' => 'Reserved',
     'st_temp_reserved' => 'Temp. hold',
     'st_leased' => 'Leased',
-    'st_sold' => 'Sold',
     'st_visit' => 'Visit',
     'draw_unit' => 'Draw warehouse boundary',
     'draw_hint' => 'Pick the property and unit, then draw a polygon around its building on the satellite imagery using the draw tool above the map.',

@@ -65,7 +65,7 @@ class AdminController extends Controller
         $unitCounts = PropertyUnit::query()
             ->selectRaw('status, COUNT(*) as c')->groupBy('status')->pluck('c', 'status');
         $totalUnits = (int) $unitCounts->sum();
-        $leasedUnits = (int) ($unitCounts['leased'] ?? 0) + (int) ($unitCounts['sold'] ?? 0);
+        $leasedUnits = (int) ($unitCounts['leased'] ?? 0);
 
         $stats = [
             'units' => $totalUnits,

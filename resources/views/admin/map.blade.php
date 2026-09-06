@@ -27,7 +27,7 @@
 <div class="hint">{{ __('admin.click_parcel_hint') }} — {{ $parcels->count() }} {{ __('admin.managed_parcels') }}</div>
 <div class="legend-row">
     @foreach(\App\Models\Parcel::STATUSES as $s)
-        <span><i style="background:{{ ['available'=>'#2ea37f','reserved'=>'#d9a441','temp_reserved'=>'#e0782e','leased'=>'#b0554a','sold'=>'#8e6fc9','visit'=>'#4a90d9'][$s] }}"></i>{{ __('admin.st_'.$s) }}</span>
+        <span><i style="background:{{ ['available'=>'#2ea37f','reserved'=>'#d9a441','temp_reserved'=>'#e0782e','leased'=>'#b0554a','visit'=>'#4a90d9'][$s] }}"></i>{{ __('admin.st_'.$s) }}</span>
     @endforeach
 </div>
 <div class="admin-map-layout">
@@ -100,7 +100,7 @@
     <script src="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script>
     <script>
     (function () {
-        const COLORS = { available: '#2ea37f', reserved: '#d9a441', temp_reserved: '#e0782e', leased: '#b0554a', sold: '#8e6fc9', visit: '#4a90d9' };
+        const COLORS = { available: '#2ea37f', reserved: '#d9a441', temp_reserved: '#e0782e', leased: '#b0554a', visit: '#4a90d9' };
         const managed = @json($parcels);
         const csrf = '{{ csrf_token() }}';
         const saveUrl = '{{ route('admin.parcels.save') }}';

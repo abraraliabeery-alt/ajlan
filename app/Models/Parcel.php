@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Parcel extends Model
 {
-    public const STATUSES = ['available', 'reserved', 'temp_reserved', 'leased', 'sold', 'visit'];
+    public const STATUSES = ['available', 'reserved', 'temp_reserved', 'leased', 'visit'];
 
     protected $fillable = [
         'parcel_no', 'block_no', 'property_id', 'status',

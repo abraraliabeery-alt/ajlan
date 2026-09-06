@@ -60,7 +60,6 @@ return [
     'st_reserved' => 'محجوز',
     'st_temp_reserved' => 'حجز مؤقت',
     'st_leased' => 'مؤجر',
-    'st_sold' => 'مباع',
     'st_visit' => 'زيارة',
     'map_status' => 'الحالة',
     'map_parcels_title' => 'القطع',

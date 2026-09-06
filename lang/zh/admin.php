@@ -46,7 +46,6 @@ return [
     'st_reserved' => '已预订',
     'st_temp_reserved' => '临时保留',
     'st_leased' => '已租出',
-    'st_sold' => '已售',
     'st_visit' => '看房预约',
     'draw_unit' => '绘制仓库边界',
     'draw_hint' => '选择物业和单元，然后使用地图上方的绘图工具在卫星影像上围绕建筑绘制多边形。',
