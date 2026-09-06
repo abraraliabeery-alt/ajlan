@@ -42,7 +42,13 @@ class SiteController extends Controller
             ->orderBy('sort_order')->get()
             ->reject(fn ($m) => str_contains($m->file_path, 'poster'));
 
-        return view('properties.show', compact('locale', 'property', 'translation', 'faq', 'gallery'));
+        $planImage = $property->media->firstWhere('collection', 'plan');
+
+        $unitRows = $property->units
+            ->sortBy('code', SORT_NATURAL)
+            ->groupBy(fn ($u) => explode('/', (string) $u->code)[2] ?? '');
+
+        return view('properties.show', compact('locale', 'property', 'translation', 'faq', 'gallery', 'planImage', 'unitRows'));
     }
 
     public function media(string $locale)

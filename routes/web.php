@@ -46,7 +46,6 @@ Route::prefix('{locale}')
         Route::get('/warehouses/{slug}', [SiteController::class, 'property'])->name('properties.show');
         Route::get('/media', [SiteController::class, 'media'])->name('media');
         Route::get('/map', [SiteController::class, 'map'])->name('map');
-        Route::get('/about', [SiteController::class, 'about'])->name('about');
         Route::get('/contact', [SiteController::class, 'contact'])->name('contact');
         Route::post('/inquiries', [InquiryController::class, 'store'])->middleware('throttle:10,1')->name('inquiries.store');
     });

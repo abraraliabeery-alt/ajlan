@@ -3,7 +3,7 @@
 return [
     'brand' => 'Ajlan & Bros Real Estate',
     'home' => 'Home', 'warehouses' => 'Warehouses', 'media' => 'Photos & video', 'about' => 'About', 'contact' => 'Contact',
-    'request_warehouse' => 'Request a warehouse', 'call_now' => 'Call now', 'email_us' => 'Email us',
+    'request_warehouse' => 'Request a warehouse', 'call_now' => 'Call now', 'email_us' => 'Email us', 'whatsapp' => 'WhatsApp', 'unified_number' => 'Unified number',
     'hero_kicker' => 'Industrial and logistics space in south Riyadh', 'hero_title' => 'Warehouses for rent that move business forward', 'hero_body' => 'Industrial warehouses with consistent construction standards, areas and heights for medium and large operations.',
     'browse' => 'Browse warehouses', 'request_visit' => 'Request a viewing',
     'warehouses_count' => 'units & warehouses', 'plots_count' => 'industrial plots', 'land_area_total' => 'm² land area', 'built_area_total' => 'm² built area',
@@ -23,7 +23,7 @@ return [
     'catalog_title' => 'Warehouses for rent in Riyadh', 'catalog_body' => 'Compare 25 industrial plots and 269 warehouses with unit areas starting around 1,060 m².', 'search' => 'Search plot code', 'results' => 'results', 'no_results' => 'No matching results.',
     'overview' => 'Overview', 'specifications' => 'Specifications', 'faq' => 'Frequently asked questions', 'availability' => 'Contact us for availability', 'media_available' => 'Professional aerial coverage is available for this location.',
     'contact_title' => 'Tell us what your operation needs', 'contact_body' => 'Share your preferred area and use, and our team will present the most suitable options.',
-    'name' => 'Name', 'phone' => 'Mobile number', 'email' => 'Email', 'required_area' => 'Required area', 'activity' => 'Business activity', 'message' => 'Additional notes', 'select_property' => 'Preferred plot', 'any_property' => 'Any suitable plot', 'send' => 'Send request', 'form_success' => 'Your request has been received. Our team will contact you shortly.',
+    'name' => 'Name', 'phone' => 'Mobile number', 'email' => 'Email', 'required_area' => 'Required area', 'activity' => 'Business activity', 'message' => 'Additional notes', 'select_property' => 'Preferred warehouse', 'choose_warehouse' => 'Choose a warehouse', 'any_property' => 'Any suitable plot', 'send' => 'Send request', 'form_success' => 'Your request has been received. Our team will contact you shortly.',
     'warehouse_collection' => 'Warehouses 51–54', 'showroom_collection' => 'Showrooms 13–16', 'photos' => 'Photos', 'video' => 'Video',
     'footer_text' => 'Industrial and logistics spaces designed to support business growth in Riyadh.', 'rights' => 'All rights reserved.',
     'seo_default_title' => 'Warehouses for Rent in Riyadh | Ajlan & Bros Real Estate', 'seo_default_description' => 'Warehouses for rent in south Riyadh across 25 industrial plots and 269 units with varied areas and heights.',
@@ -79,4 +79,6 @@ return [
     'sort_parcels' => 'Sort: parcel count',
     'layer_landmarks' => 'Landmarks',
     'legend_landmarks' => 'Landmarks & services',
+    'units_section_kicker' => 'Plot layout',
+    'units_section_title' => 'Units & warehouses of this plot',
 ];

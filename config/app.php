@@ -17,7 +17,7 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
     'supported_locales' => ['ar', 'en', 'zh'],
-    'contact_phone' => env('CONTACT_PHONE', '920011381'),
-    'contact_email' => env('CONTACT_EMAIL', 'wh@ajlanbros.com'),
+    'contact_phone' => env('CONTACT_PHONE', '+966580374724'),
+    'contact_email' => env('CONTACT_EMAIL', 'MAJED.ALOTAIBI@ajlanbros.com'),
     'admin_password' => env('ADMIN_PASSWORD', ''),
 ];

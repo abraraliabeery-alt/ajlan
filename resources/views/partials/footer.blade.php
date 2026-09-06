@@ -7,7 +7,6 @@
         <div class="footer-links">
             <a href="{{ route('properties.index', app()->getLocale()) }}">{{ __('site.warehouses') }}</a>
             <a href="{{ route('media', app()->getLocale()) }}">{{ __('site.media') }}</a>
-            <a href="{{ route('about', app()->getLocale()) }}">{{ __('site.about') }}</a>
             <a href="{{ route('contact', app()->getLocale()) }}">{{ __('site.contact') }}</a>
         </div>
         <div class="footer-contact">

@@ -63,7 +63,30 @@
 </dialog>
 @endif
 
-<section class="section property-overview"><div class="container two-column"><div><span class="kicker">{{ __('site.overview') }}</span><h2>{{ $translation->name }}</h2><p>{{ $translation->description }}</p>@if(in_array($property->code, ['T/51','T/54']))<div class="media-note">◉ {{ __('site.media_available') }}</div>@endif</div><div class="industrial-shape"><span dir="ltr">{{ $property->code }}</span></div></div></section>
+<section class="section property-overview"><div class="container two-column"><div><span class="kicker">{{ __('site.overview') }}</span><h2>{{ $translation->name }}</h2><p>{{ $translation->description }}</p>@if(in_array($property->code, ['T/51','T/54']))<div class="media-note">◉ {{ __('site.media_available') }}</div>@endif</div>@if($planImage)<button type="button" class="plan-sheet" data-lightbox="{{ asset($planImage->file_path) }}" data-lb-group="album"><img src="{{ asset($planImage->file_path) }}" alt="{{ $property->code }}" loading="lazy"></button>@else<div class="industrial-shape"><span dir="ltr">{{ $property->code }}</span></div>@endif</div></section>
+
+@if($unitRows->isNotEmpty())
+<section class="section units-section"><div class="container">
+    <div class="section-heading"><div><span class="kicker">{{ __('site.units_section_kicker') }}</span><h2>{{ __('site.units_section_title') }}</h2></div><p>{{ $property->units->count() }} {{ __('site.units') }}</p></div>
+    @foreach($unitRows as $row => $units)
+    <div class="unit-row-group">
+        <div class="unit-row-head"><span dir="ltr">{{ $property->code }}/{{ $row }}</span><em>{{ $units->count() }} {{ __('site.units') }}</em></div>
+        <div class="units-cards">
+            @foreach($units as $u)
+            <div class="unit-card st-{{ $u->status }}">
+                <div class="unit-card-code" dir="ltr">{{ $u->code }}</div>
+                <div class="unit-card-areas">
+                    <div><span>{{ __('site.built_area') }}</span><strong>{{ number_format((float) $u->area, 0) }} {{ __('site.sqm') }}</strong></div>
+                    @if($u->land_area)<div><span>{{ __('site.land_area') }}</span><strong>{{ number_format((float) $u->land_area, 0) }} {{ __('site.sqm') }}</strong></div>@endif
+                </div>
+                <div class="unit-card-foot"><i class="unit-dot"></i>{{ __('site.st_'.$u->status) }}</div>
+            </div>
+            @endforeach
+        </div>
+    </div>
+    @endforeach
+</div></section>
+@endif
 
 <section class="section specs-section"><div class="container"><div class="section-heading light-heading"><div><span class="kicker">{{ __('site.specifications') }}</span><h2>{{ __('site.specs_title') }}</h2></div><p>{{ __('site.specs_body') }}</p></div><div class="feature-grid">@foreach(__('site.features') as $index => $feature)<article><span class="feature-number">{{ str_pad((string) ($index + 1), 2, '0', STR_PAD_LEFT) }}</span><h3>{{ $feature[0] }}</h3><p>{{ $feature[1] }}</p></article>@endforeach</div></div></section>
 

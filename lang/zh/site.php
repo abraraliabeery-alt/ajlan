@@ -3,7 +3,7 @@
 return [
     'brand' => 'Ajlan & Bros 房地产',
     'home' => '首页', 'warehouses' => '仓库', 'media' => '照片与视频', 'about' => '关于我们', 'contact' => '联系我们',
-    'request_warehouse' => '申请仓库', 'call_now' => '立即致电', 'email_us' => '发送邮件',
+    'request_warehouse' => '申请仓库', 'call_now' => '立即致电', 'email_us' => '发送邮件', 'whatsapp' => 'WhatsApp', 'unified_number' => '统一号码',
     'hero_kicker' => '利雅得南部工业及物流空间', 'hero_title' => '利雅得仓库出租，助力业务向前发展', 'hero_body' => '采用统一建筑标准的工业仓库，提供适合中大型企业的面积和高度选择。',
     'browse' => '浏览仓库', 'request_visit' => '预约参观',
     'warehouses_count' => '个仓库单元', 'plots_count' => '块工业用地', 'land_area_total' => '平方米土地面积', 'built_area_total' => '平方米建筑面积',
@@ -23,7 +23,7 @@ return [
     'catalog_title' => '利雅得仓库出租', 'catalog_body' => '比较25块工业用地和269个仓库，单元面积约从1,060平方米起。', 'search' => '搜索地块编号', 'results' => '个结果', 'no_results' => '没有匹配结果。',
     'overview' => '概览', 'specifications' => '技术规格', 'faq' => '常见问题', 'availability' => '联系我们了解可用情况', 'media_available' => '该地块提供专业航拍资料。',
     'contact_title' => '告诉我们您的需求', 'contact_body' => '提交面积及用途需求，我们的团队将为您提供合适方案。',
-    'name' => '姓名', 'phone' => '手机号码', 'email' => '电子邮箱', 'required_area' => '所需面积', 'activity' => '业务类型', 'message' => '补充说明', 'select_property' => '意向地块', 'any_property' => '任何合适地块', 'send' => '提交申请', 'form_success' => '申请已收到，我们的团队将尽快与您联系。',
+    'name' => '姓名', 'phone' => '手机号码', 'email' => '电子邮箱', 'required_area' => '所需面积', 'activity' => '业务类型', 'message' => '补充说明', 'select_property' => '意向仓库', 'choose_warehouse' => '选择仓库', 'any_property' => '任何合适地块', 'send' => '提交申请', 'form_success' => '申请已收到，我们的团队将尽快与您联系。',
     'warehouse_collection' => '51–54号仓库', 'showroom_collection' => '13–16号展厅', 'photos' => '照片', 'video' => '视频',
     'footer_text' => '为利雅得企业发展提供工业和物流空间。', 'rights' => '版权所有。',
     'seo_default_title' => '利雅得仓库出租 | Ajlan & Bros房地产', 'seo_default_description' => '利雅得南部25块工业用地、269个仓库单元出租，提供多种面积和高度选择。',
@@ -79,4 +79,6 @@ return [
     'sort_parcels' => '排序：地块数量',
     'layer_landmarks' => '规划地标',
     'legend_landmarks' => '地标与配套',
+    'units_section_kicker' => '地块布局',
+    'units_section_title' => '本地块单元与仓库',
 ];
