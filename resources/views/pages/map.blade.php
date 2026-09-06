@@ -5,15 +5,35 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
 @endpush
 @section('content')
-<section class="page-hero compact-hero">
-    <div class="container">
-        <span class="kicker">{{ __('site.map_kicker') }}</span>
-        <h1>{{ __('site.map_title') }}</h1>
-        <p>{{ __('site.map_body') }}</p>
-    </div>
-</section>
 <section class="section map-section">
     <div class="container">
+        <div class="map-layout">
+            <aside class="map-sidebar">
+                <div class="map-sidebar-head">{{ __('site.map_blocks') }} <span id="blocks-count"></span></div>
+                <div class="map-tools">
+                    <input id="map-search" type="search" placeholder="{{ __('site.map_search') }}" autocomplete="off">
+                    <div class="map-filters" id="map-filters">
+                        <button type="button" data-f="all" class="active">{{ __('site.map_all') }}</button>
+                        <button type="button" data-f="available">{{ __('site.map_available') }}</button>
+                        <button type="button" data-f="partial">{{ __('site.map_partial') }}</button>
+                        <button type="button" data-f="unavailable">{{ __('site.map_unavailable') }}</button>
+                    </div>
+                    <select id="map-sort" class="map-sort">
+                        <option value="ajlan" selected>{{ __('site.sort_ajlan') }}</option>
+                        <option value="block">{{ __('site.sort_block') }}</option>
+                        <option value="units">{{ __('site.sort_units') }}</option>
+                        <option value="available">{{ __('site.sort_available') }}</option>
+                        <option value="parcels">{{ __('site.sort_parcels') }}</option>
+                    </select>
+                </div>
+                <ul id="blocks-list" class="blocks-list"></ul>
+            </aside>
+            <div class="map-wrap">
+                <div id="blocks-map" role="application" aria-label="{{ __('site.map_title') }}">
+                    <div class="map-status">{{ __('site.map_loading') }}</div>
+                </div>
+            </div>
+        </div>
         <div class="map-panel">
             <div class="map-panel-col">
                 <h3>{{ __('site.legend_title') }}</h3>
@@ -43,33 +63,6 @@
                     <li><label><input type="checkbox" data-layer="parcels" checked><i class="sw ln" style="border-color:#ff5ec8"></i><span>{{ __('site.layer_parcels') }}</span></label></li>
                     <li><label><input type="checkbox" data-layer="landmarks" checked><i class="sw" style="background:#00acc1"></i><span>{{ __('site.layer_landmarks') }}</span></label></li>
                 </ul>
-            </div>
-        </div>
-        <div class="map-layout">
-            <aside class="map-sidebar">
-                <div class="map-sidebar-head">{{ __('site.map_blocks') }} <span id="blocks-count"></span></div>
-                <div class="map-tools">
-                    <input id="map-search" type="search" placeholder="{{ __('site.map_search') }}" autocomplete="off">
-                    <div class="map-filters" id="map-filters">
-                        <button type="button" data-f="all" class="active">{{ __('site.map_all') }}</button>
-                        <button type="button" data-f="available">{{ __('site.map_available') }}</button>
-                        <button type="button" data-f="partial">{{ __('site.map_partial') }}</button>
-                        <button type="button" data-f="unavailable">{{ __('site.map_unavailable') }}</button>
-                    </div>
-                    <select id="map-sort" class="map-sort">
-                        <option value="ajlan" selected>{{ __('site.sort_ajlan') }}</option>
-                        <option value="block">{{ __('site.sort_block') }}</option>
-                        <option value="units">{{ __('site.sort_units') }}</option>
-                        <option value="available">{{ __('site.sort_available') }}</option>
-                        <option value="parcels">{{ __('site.sort_parcels') }}</option>
-                    </select>
-                </div>
-                <ul id="blocks-list" class="blocks-list"></ul>
-            </aside>
-            <div class="map-wrap">
-                <div id="blocks-map" role="application" aria-label="{{ __('site.map_title') }}">
-                    <div class="map-status">{{ __('site.map_loading') }}</div>
-                </div>
             </div>
         </div>
     </div>

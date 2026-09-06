@@ -36,8 +36,10 @@ class SiteController extends Controller
         $property = $translation->property;
         $faq = $this->propertyFaq($property, $locale);
 
+        $collection = $property->type === 'showroom' ? 'showrooms' : 'warehouses';
         $gallery = PropertyMedium::query()->with('translations')
-            ->orderBy('collection')->orderBy('sort_order')->get()
+            ->where('collection', $collection)
+            ->orderBy('sort_order')->get()
             ->reject(fn ($m) => str_contains($m->file_path, 'poster'));
 
         return view('properties.show', compact('locale', 'property', 'translation', 'faq', 'gallery'));
