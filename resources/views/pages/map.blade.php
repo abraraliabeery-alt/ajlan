@@ -157,6 +157,12 @@
         const hoverStyle = { weight: 3, fillOpacity: 0.55 };
         const activeStyle = { color: '#ffd75e', weight: 3.5, fillOpacity: 0.7 };
 
+        const scrollToMap = () => {
+            if (window.innerWidth <= 900) {
+                el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        };
+
         const blockState = prop => {
             if (!prop) return null;
             const total = prop.units || 0;
@@ -359,6 +365,7 @@
                                         '<span><i class="dot" style="background:' + (PARCEL_COLORS[u.s] || PARCEL_LINE) + '"></i>' + (UNIT_STATUS_NAMES[u.s] || u.s) + '</span>';
                         uli.addEventListener('click', e => {
                             e.stopPropagation();
+                            scrollToMap();
                             const existing = unitLayers[u.c];
                             if (existing) {
                                 map.flyToBounds(existing.getBounds(), { padding: [90, 90], duration: 0.7 });
@@ -400,6 +407,7 @@
                                     '<span>' + (pp.area_m2 ? Math.round(pp.area_m2).toLocaleString() + ' {{ __('site.sqm') }}' : '—') + '</span>';
                     pli.addEventListener('click', e => {
                         e.stopPropagation();
+                        scrollToMap();
                         const pl = parcelLayers[pp.parcel_no];
                         if (pl && parcelsLayer) {
                             if (!map.hasLayer(parcelsLayer)) parcelsLayer.addTo(map);
@@ -416,6 +424,7 @@
         const selectBlock = (i, fly = true) => {
             const layer = blockLayers[i];
             if (!layer) return;
+            if (fly) scrollToMap();
             if (activeLayer) { activeLayer.setStyle(styleFor(activeLayer.featureProps)); activeLayer.isActive = false; }
             if (activeItem) activeItem.classList.remove('active');
             layer.setStyle(activeStyle);
