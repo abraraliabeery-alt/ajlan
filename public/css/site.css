@@ -71,5 +71,6 @@ html:not([data-theme=dark]) .site-header{background:rgba(242,240,233,.94);color:
 @media(max-width:480px){.album-grid{grid-template-columns:repeat(2,1fr)}.lightbox-nav{width:38px;height:38px;font-size:20px}}
 .map-sort{width:100%;margin-top:10px;padding:9px 12px;font-family:inherit;font-size:11px;background:var(--paper);color:var(--text);border:1px solid var(--line);border-radius:4px;cursor:pointer}
 .map-sort:focus{outline:none;border-color:var(--green-bright)}
-.lm-icon{background:none;border:0}
+.lm-icon{background:none;border:0;display:none}
+#blocks-map.lm-on .lm-icon{display:block}
 .lm-icon span{display:flex;align-items:center;justify-content:center;width:26px;height:26px;font-size:20px;line-height:1;text-shadow:0 1px 4px rgba(0,0,0,.7)}

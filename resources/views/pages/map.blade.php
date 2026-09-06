@@ -243,7 +243,21 @@
             gas_station: '⛽', electric_station: '⚡',
             commercial_center: '🛒', generator: '🔌',
         };
-        const lmIcon = p => p.icon && p.icon.trim() ? p.icon : (LANDMARK_ICONS[p.type] || '📍');
+        const lmIcon = p => LANDMARK_ICONS[p.type] || '📍';
+        const landmarkAreas = [];
+        let landmarkIcons = null;
+        const LANDMARK_ZOOM = 17;
+        const refreshLandmarkIcons = () => {
+            const show = map.getZoom() >= LANDMARK_ZOOM;
+            if (landmarkIcons) {
+                if (show && !landmarksGroup.hasLayer(landmarkIcons)) landmarksGroup.addLayer(landmarkIcons);
+                if (!show && landmarksGroup.hasLayer(landmarkIcons)) landmarksGroup.removeLayer(landmarkIcons);
+            }
+            landmarkAreas.forEach(l => {
+                if (show && !l.getTooltip()) l.bindTooltip(l._lmLabel, { sticky: true, direction: 'top' });
+                if (!show && l.getTooltip()) l.unbindTooltip();
+            });
+        };
         let landmarksPromise = null;
         const ensureLandmarks = () => {
             if (landmarksPromise) return landmarksPromise;
@@ -251,18 +265,23 @@
                 .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
                 .then(data => {
                     data.features = (data.features || []).filter(f => f.properties?.type !== 'imam_housing');
-                    L.geoJSON(data, {
+                    const iconMarkers = [];
+                    const gj = L.geoJSON(data, {
                         style: f => {
                             const c = lmColor(f.properties?.type);
                             return { color: c, weight: 1.6, fillColor: c, fillOpacity: 0.45 };
                         },
-                        pointToLayer: (f, latlng) => L.marker(latlng, {
-                            icon: L.divIcon({
-                                className: 'lm-icon',
-                                html: '<span style="border-color:' + lmColor(f.properties?.type) + '">' + lmIcon(f.properties || {}) + '</span>',
-                                iconSize: [26, 26], iconAnchor: [13, 13],
-                            })
-                        }),
+                        pointToLayer: (f, latlng) => {
+                            const m = L.marker(latlng, {
+                                icon: L.divIcon({
+                                    className: 'lm-icon',
+                                    html: '<span>' + lmIcon(f.properties || {}) + '</span>',
+                                    iconSize: [26, 26], iconAnchor: [13, 13],
+                                })
+                            });
+                            iconMarkers.push(m);
+                            return m;
+                        },
                         onEachFeature: (f, l) => {
                             const p = f.properties || {};
                             const label = p.type_ar || p.type || '';
@@ -270,11 +289,19 @@
                                 const mk = L.marker([p.icon_lat, p.icon_lon], {
                                     icon: L.divIcon({
                                         className: 'lm-icon',
-                                        html: '<span style="border-color:' + lmColor(p.type) + '">' + lmIcon(p) + '</span>',
+                                        html: '<span>' + lmIcon(p) + '</span>',
                                         iconSize: [26, 26], iconAnchor: [13, 13],
-                                    }), interactive: false,
+                                    }),
                                 });
-                                mk.addTo(landmarksGroup);
+                                mk.bindTooltip(label, { direction: 'top', offset: [0, -12] });
+                                iconMarkers.push(mk);
+                            }
+                            l._lmLabel = label;
+                            if (f.geometry && f.geometry.type !== 'Point') {
+                                landmarkAreas.push(l);
+                                if (map.getZoom() >= LANDMARK_ZOOM) l.bindTooltip(label, { sticky: true, direction: 'top' });
+                            } else if (l.bindTooltip) {
+                                l.bindTooltip(label, { sticky: true, direction: 'top' });
                             }
                             l.bindPopup(
                                 '<div class="map-popup">' +
@@ -285,7 +312,11 @@
                                 '</div>'
                             );
                         }
-                    }).addTo(landmarksGroup);
+                    });
+                    iconMarkers.forEach(m => gj.removeLayer(m));
+                    landmarkIcons = L.layerGroup(iconMarkers);
+                    gj.addTo(landmarksGroup);
+                    refreshLandmarkIcons();
                     if (document.querySelector('[data-layer="landmarks"]')?.checked) bringUp();
                     else map.removeLayer(landmarksGroup);
                 })
@@ -293,7 +324,10 @@
             return landmarksPromise;
         };
 
-        const toggleLabels = () => el.classList.toggle('labels-on', map.getZoom() >= 17);
+        const toggleLabels = () => {
+            el.classList.toggle('labels-on', map.getZoom() >= 17);
+            refreshLandmarkIcons();
+        };
         map.on('zoomend', toggleLabels);
         map.on('baselayerchange', e => el.classList.toggle('dark-bg', e.layer === planOnly));
 
