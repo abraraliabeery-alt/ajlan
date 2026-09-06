@@ -533,8 +533,7 @@
                     const ul = L.geoJSON(u.g, { style: { color: UNIT_BORDER, weight: 1.2, fillColor: PARCEL_COLORS[u.s] || PARCEL_LINE, fillOpacity: 0.8 } })
                         .bindPopup('<div class="map-popup"><strong>' + (u.c || '{{ __('site.unit') }} ' + u.n) + '</strong>' +
                             '<span><i style="color:' + (PARCEL_COLORS[u.s] || PARCEL_LINE) + '">●</i> ' + (PARCEL_STATUS_NAMES[u.s] || u.s) + '</span>' +
-                            (u.a ? '<span>{{ __('site.built_area') }}: ' + u.a.toLocaleString() + ' {{ __('site.sqm') }}</span>' : '') +
-                            (u.la ? '<span>{{ __('site.map_area') }}: ' + u.la.toLocaleString() + ' {{ __('site.sqm') }}</span>' : '') +
+                            (u.a ? '<span>{{ __('site.map_area') }}: ' + u.a.toLocaleString() + ' {{ __('site.sqm') }}</span>' : '') +
                             (prop.url ? '<a class="popup-link" href="' + prop.url + '">{{ __('site.details') }}</a>' : '') + '</div>')
                         ;
                     unitLayers[u.c] = ul;
