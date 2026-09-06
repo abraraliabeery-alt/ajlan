@@ -11,6 +11,9 @@ class DatabaseSeeder extends Seeder
         $this->call([
             PropertySeeder::class,
             PropertyMediaSeeder::class,
+            PropertyUnitsSeeder::class,
+            WarehouseUnitsSeeder::class,
+            WarehouseGeometrySeeder::class,
         ]);
     }
 }

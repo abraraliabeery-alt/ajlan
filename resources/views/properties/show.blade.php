@@ -35,6 +35,34 @@
     </div>
 </section>
 
+@if($gallery->isNotEmpty())
+<section class="album-strip">
+    <div class="container">
+        <div class="album-grid">
+            @foreach($gallery as $item)
+                @if($item->type === 'video')
+                <button type="button" class="album-card album-video" data-lightbox="{{ asset($item->file_path) }}" data-lb-group="album" data-lb-type="video">
+                    <img src="{{ asset($item->thumbnail_path) }}" alt="" loading="lazy"><span class="album-play">▶</span>
+                </button>
+                @else
+                <button type="button" class="album-card" data-lightbox="{{ asset($item->file_path) }}" data-lb-group="album">
+                    <img src="{{ asset($item->file_path) }}" alt="" loading="lazy">
+                </button>
+                @endif
+            @endforeach
+        </div>
+    </div>
+</section>
+<dialog id="album-lightbox" class="lightbox" data-lb-dialog="album">
+    <button type="button" class="lightbox-close" aria-label="Close">×</button>
+    <button type="button" class="lightbox-nav lightbox-prev" aria-label="Prev">‹</button>
+    <img src="" alt="">
+    <video controls playsinline preload="metadata" style="display:none"></video>
+    <button type="button" class="lightbox-nav lightbox-next" aria-label="Next">›</button>
+    <div class="lightbox-counter"></div>
+</dialog>
+@endif
+
 <section class="section property-overview"><div class="container two-column"><div><span class="kicker">{{ __('site.overview') }}</span><h2>{{ $translation->name }}</h2><p>{{ $translation->description }}</p>@if(in_array($property->code, ['T/51','T/54']))<div class="media-note">◉ {{ __('site.media_available') }}</div>@endif</div><div class="industrial-shape"><span dir="ltr">{{ $property->code }}</span></div></div></section>
 
 <section class="section specs-section"><div class="container"><div class="section-heading light-heading"><div><span class="kicker">{{ __('site.specifications') }}</span><h2>{{ __('site.specs_title') }}</h2></div><p>{{ __('site.specs_body') }}</p></div><div class="feature-grid">@foreach(__('site.features') as $index => $feature)<article><span class="feature-number">{{ str_pad((string) ($index + 1), 2, '0', STR_PAD_LEFT) }}</span><h3>{{ $feature[0] }}</h3><p>{{ $feature[1] }}</p></article>@endforeach</div></div></section>

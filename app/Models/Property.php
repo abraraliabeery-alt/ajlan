@@ -40,6 +40,11 @@ class Property extends Model
         return $this->hasOne(PropertyTranslation::class)->where('locale', $locale);
     }
 
+    public function units(): HasMany
+    {
+        return $this->hasMany(PropertyUnit::class)->orderBy('unit_number');
+    }
+
     public function media(): HasMany
     {
         return $this->hasMany(PropertyMedium::class)->orderBy('sort_order');

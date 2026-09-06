@@ -19,4 +19,5 @@ return [
     'supported_locales' => ['ar', 'en', 'zh'],
     'contact_phone' => env('CONTACT_PHONE', '920011381'),
     'contact_email' => env('CONTACT_EMAIL', 'wh@ajlanbros.com'),
+    'admin_password' => env('ADMIN_PASSWORD', ''),
 ];

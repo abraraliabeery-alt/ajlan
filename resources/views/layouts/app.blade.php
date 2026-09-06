@@ -46,7 +46,7 @@
     <link rel="stylesheet" href="{{ asset('css/site.css') }}?v={{ filemtime(public_path('css/site.css')) }}">
     <script>document.documentElement.dataset.theme=localStorage.getItem('ajlan-theme')||'dark';</script>
     <script type="application/ld+json">{!! json_encode([
-        '@context' => 'https://schema.org',
+        '@@context' => 'https://schema.org',
         '@type' => 'RealEstateAgent',
         'name' => __('site.brand'),
         'url' => route('home', $currentLocale),
@@ -80,5 +80,6 @@
         </a>
     </nav>
     <script src="{{ asset('js/site.js') }}" defer></script>
+    @stack('scripts')
 </body>
 </html>

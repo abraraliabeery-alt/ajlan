@@ -8,6 +8,7 @@
             <a class="{{ request()->routeIs('home') ? 'active' : '' }}" href="{{ route('home', app()->getLocale()) }}">{{ __('site.home') }}</a>
             <a class="{{ request()->routeIs('properties.*') ? 'active' : '' }}" href="{{ route('properties.index', app()->getLocale()) }}">{{ __('site.warehouses') }}</a>
             <a class="{{ request()->routeIs('media') ? 'active' : '' }}" href="{{ route('media', app()->getLocale()) }}">{{ __('site.media') }}</a>
+            <a class="{{ request()->routeIs('map') ? 'active' : '' }}" href="{{ route('map', app()->getLocale()) }}">{{ __('site.map') }}</a>
             <a class="{{ request()->routeIs('about') ? 'active' : '' }}" href="{{ route('about', app()->getLocale()) }}">{{ __('site.about') }}</a>
             <a class="{{ request()->routeIs('contact') ? 'active' : '' }}" href="{{ route('contact', app()->getLocale()) }}">{{ __('site.contact') }}</a>
         </nav>

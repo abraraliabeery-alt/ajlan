@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Parcel;
 use App\Models\Property;
 use App\Models\PropertyMedium;
 use App\Models\PropertyTranslation;
@@ -35,7 +36,11 @@ class SiteController extends Controller
         $property = $translation->property;
         $faq = $this->propertyFaq($property, $locale);
 
-        return view('properties.show', compact('locale', 'property', 'translation', 'faq'));
+        $gallery = PropertyMedium::query()->with('translations')
+            ->orderBy('collection')->orderBy('sort_order')->get()
+            ->reject(fn ($m) => str_contains($m->file_path, 'poster'));
+
+        return view('properties.show', compact('locale', 'property', 'translation', 'faq', 'gallery'));
     }
 
     public function media(string $locale)
@@ -43,6 +48,62 @@ class SiteController extends Controller
         $media = PropertyMedium::query()->with('translations')->orderBy('collection')->orderBy('sort_order')->get();
 
         return view('pages.media', compact('locale', 'media'));
+    }
+
+    public function map(string $locale)
+    {
+        $properties = Property::query()
+            ->where('is_published', true)
+            ->whereHas('translations', fn ($query) => $query->where('locale', $locale))
+            ->with(['translations' => fn ($query) => $query->where('locale', $locale), 'units'])
+            ->withCount([
+                'units as available_count' => fn ($query) => $query->where('status', 'available'),
+                'units as reserved_count' => fn ($query) => $query->where('status', 'reserved'),
+                'units as leased_count' => fn ($query) => $query->where('status', 'leased'),
+            ])
+            ->get();
+
+        $blockProperties = $properties->mapWithKeys(function ($property) use ($locale) {
+                if (! preg_match('/(\d+)/', (string) $property->code, $matches)) {
+                    return [];
+                }
+                $slug = $property->translations->first()->slug ?? null;
+
+                return [(int) $matches[1] => [
+                    'code' => $property->code,
+                    'units' => $property->units_count,
+                    'available' => $property->available_count,
+                    'reserved' => $property->reserved_count,
+                    'leased' => $property->leased_count,
+                    'unitList' => $property->units->map(fn ($u) => [
+                        'n' => $u->unit_number, 's' => $u->status, 'c' => $u->code,
+                        'p' => $u->parcel_nos, 'g' => $u->geometry,
+                        'a' => $u->area ? (float) $u->area : null,
+                        'la' => $u->land_area ? (float) $u->land_area : null,
+                    ])->values(),
+                    'url' => $slug ? route('properties.show', [$locale, $slug]) : null,
+                ]];
+            });
+
+        $parcelUnits = [];
+        foreach ($properties as $property) {
+            $slug = $property->translations->first()->slug ?? null;
+            $url = $slug ? route('properties.show', [$locale, $slug]) : null;
+            foreach ($property->units as $unit) {
+                foreach ((array) $unit->parcel_nos as $pn) {
+                    $parcelUnits[$pn] = ['code' => $unit->code, 's' => $unit->status, 'url' => $url];
+                }
+            }
+        }
+
+        $parcelStatuses = Parcel::query()->pluck('status', 'parcel_no');
+
+        $statusNames = [];
+        foreach (Parcel::STATUSES as $status) {
+            $statusNames[$status] = __('site.st_'.$status);
+        }
+
+        return view('pages.map', compact('locale', 'blockProperties', 'parcelStatuses', 'parcelUnits', 'statusNames'));
     }
 
     public function about(string $locale)
